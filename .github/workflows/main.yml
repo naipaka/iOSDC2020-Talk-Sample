@@ -20,7 +20,7 @@ env:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: macOS-latest
     env:
       MINT_PATH: mint/lib
       MINT_LINK_PATH: mint/bin
@@ -35,6 +35,7 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: |
             ${{ runner.os }}-gems-
+
       - name: Install Bundled Gems
         run: make install-bundler
       
